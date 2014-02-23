@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+'use strict';
+var path = require('path');
+var caddis = require(path.resolve(__dirname, '../lib/caddis'));
+var parseArgs = require('minimist');
+var args = parseArgs(process.argv.slice(2));
+
+var cli = module.exports;
+
+cli.start = function() {
+  caddis.start(function() {
+    console.log('Caddis started.');
+  });
+};
+
+cli.stop = function() {
+  caddis.stop(function() {
+    console.log('Caddis stopped.');
+  });
+};
+
+if(args._[0] === 'start') {
+  cli.start();
+}
+else if(args._[0] === 'stop') {
+  cli.stop();
+}

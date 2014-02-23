@@ -1,0 +1,7 @@
+{
+  "method": "get",
+  "uri": "/hello",
+  "response": {
+    "id": "foo"
+  }
+}
