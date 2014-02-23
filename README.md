@@ -24,7 +24,7 @@ Visit [http://localhost:3001/foo](http://localhost:3001/foo), prints:
 ```
 
 ```
-$caddis stop
+$ caddis stop
 ```
 
 Visit [http://localhost:3001/foo](http://localhost:3001/foo), 404.
