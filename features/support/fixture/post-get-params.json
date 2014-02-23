@@ -1,0 +1,7 @@
+{
+  "method": "get",
+  "uri": "/user/:id",
+  "response": {
+    "name": "foo"
+  }
+}

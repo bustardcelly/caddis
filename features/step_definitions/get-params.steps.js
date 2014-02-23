@@ -10,26 +10,15 @@ module.exports = function() {
 
   var postBody = {
     "method": "get",
-    "uri": "/hello",
+    "uri": "/user/:id",
     "response": {
-      "id": "foo"
+      "name": "foo"
     }
   };
 
   this.World = require('../support/world').World;
 
-  this.Given(/^The Caddis server has started$/, function(callback) {
-    request(this.serverLocation)
-      .get('/')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .end(function(error, res){
-        expect(error ? false : true).to.equal(true, 'Failed to access server: ' + error);
-        callback();
-      });
-  });
-
-  this.When(/^I submit a GET request with response JSON$/, function(callback) {
+  this.When(/^I submit a GET request with uri params$/, function(callback) {
     var serverLocation = this.serverLocation;
     req({
       method: 'POST',
@@ -43,9 +32,9 @@ module.exports = function() {
     });
   });
 
-  this.Then(/^The JSON is returned by issuing a GET at the specified uri$/, function(callback) {
+  this.Then(/^The JSON response from a GET request to defined url$/, function(callback) {
     request(this.serverLocation)
-      .get('/hello')
+      .get('/user/23234234')
       .expect('Content-Type', /json/)
       .expect(200)
       .end(function(error, res) {
