@@ -33,6 +33,8 @@ Visit [http://localhost:3001/foo](http://localhost:3001/foo), Not Found.
 
 Tests
 ---
+cucumberjs
+
 ```
 $ npm run test
 ```
