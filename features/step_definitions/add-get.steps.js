@@ -18,17 +18,6 @@ module.exports = function() {
 
   this.World = require('../support/world').World;
 
-  this.Given(/^The Caddis server has started$/, function(callback) {
-    request(this.serverLocation)
-      .get('/')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .end(function(error, res){
-        expect(error ? false : true).to.equal(true, 'Failed to access server: ' + error);
-        callback();
-      });
-  });
-
   this.When(/^I submit a GET request with response JSON$/, function(callback) {
     var serverLocation = this.serverLocation;
     req({
