@@ -16,7 +16,9 @@ var help = [
   '',
   'actions:',
   '  start               Start Caddis at http://localhost:$port',
-  '  stop                Stop a previously started Caddis daemon'
+  '  stop                Stop a previously started Caddis daemon',
+  'options:',
+  '  --port  int         Port number to start caddis'
 ];
 
 cli.start = function(port) {
