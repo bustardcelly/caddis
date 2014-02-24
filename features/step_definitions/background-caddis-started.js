@@ -12,8 +12,12 @@ module.exports = function() {
       .expect('Content-Type', /json/)
       .expect(200)
       .end(function(error, res){
-        expect(error ? false : true).to.equal(true, 'Failed to access server: ' + error);
-        callback();
+        if(error) {
+          expect(error ? false : true).to.equal(true, 'Failed to access server: ' + error);
+        }
+        else {
+          callback();
+        }
       });
   });
 
