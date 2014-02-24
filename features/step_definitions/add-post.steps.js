@@ -9,9 +9,9 @@ module.exports = function() {
 
   this.World = require('../support/world').World;
 
-  this.Then(/^The JSON response from a "GET" request to defined url:$/, function(json, callback) {
+  this.Then(/^The JSON is returned by issuing a "POST" at the specified uri:$/, function(json, callback) {
     request(this.serverLocation)
-      .get('/user/23234234')
+      .post('/user/23234234')
       .expect('Content-Type', /json/)
       .expect(200)
       .end(function(error, res) {
