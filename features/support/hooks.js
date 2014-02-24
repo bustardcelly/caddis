@@ -9,12 +9,12 @@ var caddis = require('../../lib/caddis');
 module.exports = function() {
   
   this.Before(function(callback) {
-    spawn('caddis', ['start'])
+    spawn('node', ['./bin/caddis', 'start'])
       .on('exit', callback);
   });
 
   this.After(function(callback) {
-    spawn('caddis', ['stop'])
+    spawn('node', ['./bin/caddis', 'stop'])
       .on('exit', callback);
   });
 
