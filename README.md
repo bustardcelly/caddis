@@ -2,8 +2,6 @@ Caddis
 ---
 > On-The-Fly Mock JSON Server
 
-[![Build Status](https://travis-ci.org/bustardcelly/caddis.png?branch=master)](https://travis-ci.org/bustardcelly/caddis)
-
 Installation
 ---
 ```
