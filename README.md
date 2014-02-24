@@ -12,7 +12,7 @@ Usage
 ---
 ```
 $ caddis start
-$ curl -X POST -d '{"method":"GET", "uri":"/foo", "response":{\"bar\":\"baz\"}}' http://localhost:3001/api --header "Content-Type:application/json"
+$ curl -X POST -d '{"method":"GET", "uri":"/foo", "response":{"bar":"baz"}}' http://localhost:3001/api --header "Content-Type:application/json"
 ```
 
 Visit [http://localhost:3001/foo](http://localhost:3001/foo), prints:
