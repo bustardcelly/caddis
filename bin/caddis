@@ -4,24 +4,49 @@ var path = require('path');
 var caddis = require(path.resolve(__dirname, '../lib/caddis'));
 var parseArgs = require('minimist');
 var args = parseArgs(process.argv.slice(2));
+var port = args.port || 3001;
+require('colors');
 
 var cli = module.exports;
 
-cli.start = function() {
-  caddis.start(function() {
-    console.log('Caddis started.');
+var help = [
+  'usage: caddis [action]',
+  '',
+  'Starts a server at http://localhost:3001 as a daemon, exposing an api to post JSON to in order to mock a RESTful service.',
+  '',
+  'actions:',
+  '  start               Start Caddis at http://localhost:$port',
+  '  stop                Stop a previously started Caddis daemon'
+];
+
+cli.start = function(port) {
+  caddis.start(port, function(error) {
+    if(error) {
+      console.log(('Error in starting Caddis at port ' + port + ': ' + error).red);
+    }
+    else {
+      console.log('Caddis started.'.grey);
+    }
   });
 };
 
 cli.stop = function() {
-  caddis.stop(function() {
-    console.log('Caddis stopped.');
+  caddis.stop(function(error) {
+    if(error) {
+      console.log(('Error in stopping Caddis: ' + error).red);
+    }
+    else {
+      console.log('Caddis stopped.'.grey);
+    }
   });
 };
 
 if(args._[0] === 'start') {
-  cli.start();
+  cli.start(port);
 }
 else if(args._[0] === 'stop') {
   cli.stop();
+}
+else {
+  console.log(help.join('\n').yellow);
 }

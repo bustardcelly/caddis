@@ -30,6 +30,11 @@
   },
   "dependencies": {
     "express": "~3.4.8",
-    "forever": "~0.10.11"
+    "forever": "~0.10.11",
+    "colors": "~0.6.2",
+    "mkdirp": "~0.3.5",
+    "map-stream": "~0.1.0",
+    "lodash": "~2.4.1",
+    "rimraf": "~2.2.6"
   }
 }
