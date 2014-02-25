@@ -46,7 +46,7 @@ cli.stop = function() {
   });
 };
 
-if(ags.h) {
+if(args.h) {
   printHelp();
 }
 else if(args._[0] === 'start') {
