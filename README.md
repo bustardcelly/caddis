@@ -29,9 +29,62 @@ $ caddis stop
 
 Visit [http://localhost:3001/foo](http://localhost:3001/foo), Not Found.
 
+What?
+---
+![Caddis Fly Lure](http://custardbelly.com/images/caddis.jpg)  
+A caddis is a moth-like insect often used as models for fly lures in fishing.
+
+The [caddis](https://github.com/bustardcelly/caddis) CLI tool is used to start and stop a RESTful JSON service with the ability to POST route configuration and responses, on-the-fly, for mocking and testing purposes.
+
+_There's wit in there somewhere._
+
+Why?
+---
+There are other projects I have been a part of, such as [madmin](https://github.com/infrared5/madmin), that allow for dynamically creating RESTful APIs through a User Interface and allows for persistance through I/O.
+
+Recently, I was involved with mocking a service layer for unit testing purposes and found that the manual curation of such an API was too tedious for the task at hand - I wanted the process to be much more fluid and simple.
+
+In this particular instance I needed to:
+
+1. Start a server in setup/before
+2. Dynamically add a route to the service with mock JSON response
+3. Run the test
+4. Shut down the server in teardown/after
+
+Fairly simple, and most of all I didnt want any artifacts lying around - in other words I didn't need for any routes that I dynamically created to stick around on my local disk after the tests were done.
+
+As such, [caddis](https://github.com/bustardcelly/caddis) as born.
+
+How
+---
+As mentioned briefly above, [caddis](https://github.com/bustardcelly/caddis) is a CLI tool. It is recommended to install globally:
+
+```
+$ npm install -g caddis
+```
+_: you may need to `sudo`_
+
+Once installed, you can start the service (currently defaults to [http://localhost:3001](http://localhost:3001)) and begin POSTing route configurations in JSON. Here is an example using cUrl that dynamically adds a GET route at `/foo` with a simple JSON payload of `{"bar":"baz"}`:
+
+```
+$ curl -X POST -d '{"method":"GET", "uri":"/foo", "response":{"bar":"baz"}}' http://localhost:3001/api --header "Content-Type:application/json"
+```
+
+You are not confiuned to cUrl - you can use whatever networking library in whatever language you are writing your tests in and the server can handle all modern RESTful methods:
+
+* GET
+* POST
+* PUT
+* DELETE
+
+When you are finished, simply stop the [caddis](https://github.com/bustardcelly/caddis) server:
+
+```
+$ caddis stop
+```
+
 Tests
 ---
-cucumberjs
 
 ```
 $ npm run test

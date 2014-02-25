@@ -15,8 +15,14 @@ var help = [
   '',
   'actions:',
   '  start               Start Caddis at http://localhost:3001',
-  '  stop                Stop a previously started Caddis daemon'
+  '  stop                Stop a previously started Caddis daemon',
+  'options:',
+  '  -h                  Display this help menu'
 ];
+
+var printHelp = function printHelp() {
+  console.log(help.join('\n').yellow);
+};
 
 cli.start = function() {
   caddis.start(function(error) {
@@ -40,12 +46,15 @@ cli.stop = function() {
   });
 };
 
-if(args._[0] === 'start') {
+if(ags.h) {
+  printHelp();
+}
+else if(args._[0] === 'start') {
   cli.start();
 }
 else if(args._[0] === 'stop') {
   cli.stop();
 }
 else {
-  console.log(help.join('\n').yellow);
+  printHelp();
 }
