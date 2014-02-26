@@ -36,7 +36,7 @@ A caddis is a moth-like insect often used as models for fly lures in fishing.
 
 The [caddis](https://github.com/bustardcelly/caddis) CLI tool is used to start and stop a RESTful JSON service with the ability to POST route configuration and responses, on-the-fly, for mocking and testing purposes.
 
-_There's wit in there somewhere._
+_It may be a stretch, but there's wit in there somewhere..._
 
 Why?
 ---
@@ -53,7 +53,7 @@ In this particular instance I needed to:
 
 Fairly simple, and most of all I didnt want any artifacts lying around - in other words I didn't need for any routes that I dynamically created to stick around on my local disk after the tests were done.
 
-As such, [caddis](https://github.com/bustardcelly/caddis) as born.
+As such, [caddis](https://github.com/bustardcelly/caddis) was born.
 
 How
 ---
@@ -82,6 +82,14 @@ When you are finished, simply stop the [caddis](https://github.com/bustardcelly/
 ```
 $ caddis stop
 ```
+
+## Post Data
+The post body data that is sent to [caddis](https://github.com/bustardcelly/caddis) has the following properties:
+
+* method: The REST method
+* uri: The endpoint of the service to hit (requires prepended '/')
+* response: The JSON object to return on request
+* statusCode: [Optional] Status code to return. Defaults to 200
 
 Tests
 ---
