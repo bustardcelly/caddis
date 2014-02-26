@@ -86,10 +86,11 @@ $ caddis stop
 ## Post Data
 The post body data that is sent to [caddis](https://github.com/bustardcelly/caddis) has the following properties:
 
-* method: The REST method
-* uri: The endpoint of the service to hit (requires prepended '/')
-* response: The JSON object to return on request
-* statusCode: [Optional] Status code to return. Defaults to 200
+* __method__: The REST method
+* __uri__: The endpoint of the service to hit (requires prepended '/')
+* __response__: The JSON object to return on request
+* __statusCode__: [Optional] Status code to return. Defaults to 200
+* __delay__: [Optional] Time delay, in milliseconds, to delay response. Defaults to NaN
 
 Tests
 ---
