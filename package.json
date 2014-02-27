@@ -12,7 +12,7 @@
     }
   ],
   "engines": {
-    "node": ">= 0.10.26"
+    "node": ">= 0.10.0"
   },
   "bin": "./bin/caddis",
   "main": "./lib/caddis",
@@ -28,13 +28,10 @@
     "request": "~2.34.0"
   },
   "dependencies": {
-    "express": "~3.4.8",
     "forever": "~0.10.11",
     "colors": "~0.6.2",
     "mkdirp": "~0.3.5",
-    "map-stream": "~0.1.0",
     "lodash": "~2.4.1",
-    "rimraf": "~2.2.6",
     "minimist": "0.0.8"
   }
 }
