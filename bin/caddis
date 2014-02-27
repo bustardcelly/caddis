@@ -7,30 +7,33 @@ var args = parseArgs(process.argv.slice(2));
 require('colors');
 
 var cli = module.exports;
+var port = args.p || 3001;
 
 var help = [
   'usage: caddis [action]',
   '',
-  'Starts a server at http://localhost:3001 as a daemon, exposing an api to post JSON to in order to mock a RESTful service.',
+  'Starts a server at http://localhost:<port> as a daemon, exposing an api to post JSON to in order to mock a RESTful service.',
+  'Defaults to port 3001 unless --port option provided.',
   '',
   'actions:',
-  '  start               Start Caddis at http://localhost:3001',
+  '  start               Start Caddis at http://localhost:<port>',
   '  stop                Stop a previously started Caddis daemon',
   'options:',
-  '  -h                  Display this help menu'
+  '  -h                  Display this help menu',
+  '  -p                  Desired port to start server on localhost'
 ];
 
 var printHelp = function printHelp() {
   console.log(help.join('\n').yellow);
 };
 
-cli.start = function() {
-  caddis.start(function(error) {
+cli.start = function(port) {
+  caddis.start(port, function(error) {
     if(error) {
       console.log('Error in starting Caddis.'.red);
     }
     else {
-      console.log('Caddis started.'.grey);
+      console.log(('Caddis started at http://localhost:' + port + '.').grey);
     }
   });
 };
@@ -50,7 +53,7 @@ if(args.h) {
   printHelp();
 }
 else if(args._[0] === 'start') {
-  cli.start();
+  cli.start(port);
 }
 else if(args._[0] === 'stop') {
   cli.stop();
