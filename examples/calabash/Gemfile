@@ -1,0 +1,5 @@
+source 'http://rubygems.org'
+
+gem 'json', '~> 1.8.1'
+gem 'calabash', '~> 0.9.167'
+gem 'rspec-expectations', '~> 2.14.5'
