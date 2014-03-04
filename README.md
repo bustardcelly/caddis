@@ -2,6 +2,8 @@ Caddis
 ---
 > On-The-Fly Mock JSON Server
 
+![caddis npm](https://nodei.co/npm/caddis.png)
+
 Installation
 ---
 ```
