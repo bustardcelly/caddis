@@ -1,7 +1,9 @@
+0.4.1 / 2014-03-03
+==================
+  * support for return of call history through /_call_requests. closes https://github.com/bustardcelly/caddis/issues/4
+
 0.4.0 / 2014-03-03
 ==================
-  * 0.4.0
-  * better change logs
   * lightweight body parser to accept param string and JSON.
   * perhaps some support for request param parse on body.
   * support for port option!
