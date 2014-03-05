@@ -1,3 +1,7 @@
+0.4.2 / 2014-03-04
+==================
+  * allow for special characters in uri param values.
+
 0.4.1 / 2014-03-03
 ==================
   * support for return of call history through /_call_requests. closes https://github.com/bustardcelly/caddis/issues/4
