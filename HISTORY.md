@@ -7,7 +7,7 @@
   * lightweight body parser to accept param string and JSON.
   * perhaps some support for request param parse on body.
   * support for port option!
-  * proper temrination on regex matching for uri on add route.
+  * proper termination on regex matching for uri on add route.
   * update to forever runner on caddis to preseved session-only logging at HOME for developer debugging purposes.
   * light logging in caddis server.
   * experimental removal of express to allow custom ports.

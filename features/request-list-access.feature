@@ -6,7 +6,6 @@ Feature: Access request traffic on caddis
   Background: Caddis Started
     Given The Caddis server has started
 
-  @req
   Scenario: Access list of request from single POST
     When I submit a "GET" request with response JSON:
     """
