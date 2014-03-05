@@ -10,6 +10,22 @@ Installation
 $ npm install -g caddis
 ```
 
+```
+$ caddis -h
+
+usage: caddis [action] [port]
+
+Starts a server at http://localhost:<port> as a daemon, exposing an api to post JSON to in order to mock a RESTful service.
+Defaults to port 3001 unless --port option provided.
+
+actions:
+  start               Start Caddis at http://localhost:<port>
+  stop                Stop a previously started Caddis daemon
+options:
+  -h                  Display this help menu
+  -p                  Desired port to start server on localhost
+```
+
 Usage
 ---
 ```

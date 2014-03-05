@@ -10,7 +10,7 @@ var cli = module.exports;
 var port = args.p || 3001;
 
 var help = [
-  'usage: caddis [action]',
+  'usage: caddis [action] [port]',
   '',
   'Starts a server at http://localhost:<port> as a daemon, exposing an api to post JSON to in order to mock a RESTful service.',
   'Defaults to port 3001 unless --port option provided.',
