@@ -38,3 +38,20 @@ Feature: Caddis supports query params
     """
     {"name":"foo"}
     """
+
+  Scenario: Query params are tokenized and accepted with special characters
+    When I submit a "GET" request with response JSON:
+    """
+    {
+      "method": "get",
+      "uri": "/user?category=employee&age=37&apartment=security",
+      "response": {
+        "name": "foo"
+      }
+    }
+    """
+    And I follow-up a GET request to caddis at "http://localhost:3001/user?category=0.45&age=-45&apartment=the%20class"
+    Then The response from the follow-up is:
+    """
+    {"name":"foo"}
+    """
