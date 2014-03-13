@@ -1,3 +1,9 @@
+0.4.3 / 2014-03-13
+==================
+  * support for tokenized query parameters.
+  * spec for multuple param uri.
+  * added help notification to README
+
 0.4.2 / 2014-03-04
 ==================
   * allow for special characters in uri param values.
