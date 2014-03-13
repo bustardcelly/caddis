@@ -1,3 +1,7 @@
+0.4.4 / 2014-03-13
+==================
+  * allow special characters in qury parameter values.
+
 0.4.3 / 2014-03-13
 ==================
   * support for tokenized query parameters.
