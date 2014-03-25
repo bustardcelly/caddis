@@ -17,7 +17,9 @@
   "bin": "./bin/caddis",
   "main": "./lib/caddis",
   "scripts": {
-    "test": "node node_modules/.bin/cucumber-js"
+    "test-global": "node node_modules/.bin/cucumber-js",
+    "test-module": "node node_modules/.bin/cucumber-js --features features-module",
+    "test": "npm run test-global && npm run test-module"
   },
   "devDependencies": {
     "cucumber": "~0.3.3",
