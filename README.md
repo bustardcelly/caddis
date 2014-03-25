@@ -117,6 +117,34 @@ Tests
 $ npm run test
 ```
 
+Caddis as Local Module
+---
+It is also possible to use `caddis` as a locally required module (as oppose to installing globally with `-g`):
+
+### Installation
+```
+$ npm install caddis
+```
+
+### Usage
+```
+var caddis = require('caddis');
+caddis.start(3002, function() {
+  // caddis started on http://localhost:3002
+});
+
+...
+
+caddis.stop(function() {
+  // caddis stopped.
+});
+```
+
+### Tests
+```
+$ npm run test-module
+```
+
 License
 ---
 Copyright (c) 2014 Todd Anderson
