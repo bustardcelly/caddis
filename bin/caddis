@@ -28,7 +28,7 @@ var printHelp = function printHelp() {
 };
 
 cli.start = function(port) {
-  caddis.start(port, function(error) {
+  caddis.shell.start(port, function(error) {
     if(error) {
       console.log('Error in starting Caddis.'.red);
     }
@@ -39,7 +39,7 @@ cli.start = function(port) {
 };
 
 cli.stop = function() {
-  caddis.stop(function(error) {
+  caddis.shell.stop(function(error) {
     if(error) {
       console.log(('Error in stopping Caddis: ' + error).red);
     }
